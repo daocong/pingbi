@@ -18,7 +18,6 @@
  *
  */
 
-alert(1);
 
   // 建立白名单
   var whiteList = [
@@ -26,10 +25,6 @@ alert(1);
     'daocong',
   ];
 
-  // 建立黑名单
-  var blackList = [
-    '192.168.1.0'
-  ];
 
   // 建立关键词黑名单
   var keywordBlackList = [
