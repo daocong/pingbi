@@ -32,7 +32,7 @@
   ];
 
 
-
+ 
   /**
    * 重写单个 window 窗口的 document.write 属性
    * @param  {[BOM]} window [浏览器window对象]
