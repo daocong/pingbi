@@ -22,8 +22,7 @@
   // 建立白名单
   var whiteList = [
     'www.pp1500',
-    'www.bbb.com',
-    's4.cnzz.com'
+    'daocong',
   ];
 
   // 建立黑名单
