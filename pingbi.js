@@ -105,7 +105,7 @@
 
 
 
-  
+   
   /**
    * [白名单匹配]
    * @param  {[Array]} whileList [白名单]
