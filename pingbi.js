@@ -1,6 +1,6 @@
 /**
  * @author Coco
- * @QQ:308695699
+ * @QQ:594277625
  * @name httphijack 1.0.0
  * @update : 2016-08-10
  * @description 使用Javascript实现前端防御http劫持及防御XSS攻击，并且对可疑攻击进行上报
@@ -18,6 +18,7 @@
  *
  */
 
+alert(1);
 
   // 建立白名单
   var whiteList = [
