@@ -21,7 +21,7 @@
 
   // 建立白名单
   var whiteList = [
-    'www.aaa.com',
+    'www.pp1500',
     'www.bbb.com',
     's4.cnzz.com'
   ];
@@ -33,11 +33,27 @@
 
   // 建立关键词黑名单
   var keywordBlackList = [
-    'xss',
-    'BAIDU_SSP__wrapper',
-    'BAIDU_DSPUI_FLOWBAR'
+    'script',
   ];
 
+
+
+  /**
+   * 重写单个 window 窗口的 document.write 属性
+   * @param  {[BOM]} window [浏览器window对象]
+   * @return {[type]}       [description]
+   */
+    var old_write = window.document.writeln;
+
+    window.document.writeln = function(string) {
+      if (blackListMatch(keywordBlackList, string)) {
+        console.log('拦截可疑模块:', string);
+        return;
+      }
+
+      // 调用原始接口
+      old_write.apply(document, arguments);
+    }
 
 
 
@@ -93,26 +109,6 @@
 
 
 
-  // 重写 createElement
-  function resetCreateElement() {}
-
-  /**
-   * 重写单个 window 窗口的 document.write 属性
-   * @param  {[BOM]} window [浏览器window对象]
-   * @return {[type]}       [description]
-   */
-    var old_write = window.document.writeln;
-
-    window.document.writeln = function(string) {
-      if (blackListMatch(keywordBlackList, string)) {
-        console.log('拦截可疑模块:', string);
-        hijackReport('拦截可疑document-write', string);
-        return;
-      }
-
-      // 调用原始接口
-      old_write.apply(document, arguments);
-    }
 
   
   /**
